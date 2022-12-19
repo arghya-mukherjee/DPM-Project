@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<script type = "text/javascript">
+        		window.history.forward();
+        		function noBack() {
+            			window.history.forward();
+        		}
+    		</script>
+		<link rel = "stylesheet" href = "{{ url_for("static", filename = "style2.css") }}" />
+	</head>
+	<body style = "text-align:center;">
+                <img class = "filmReel1" src = "{{ url_for("static", filename = "1000_F_116184262_OXtEyENI2Cog9JaBh8HHElq4m59lRB2f.jpg") }}" 
+		     alt = "Film_Reel_1">
+                <img class = "filmReel2" src = "{{ url_for("static", filename = "1000_F_116184262_OXtEyENI2Cog9JaBh8HHElq4m59lRB2f.jpg") }}" 
+		     alt = "Film_Reel_2">
+                <img class = "filmReel3" src = "{{ url_for("static", filename = "dniezby_Film_reel.svg") }}" alt = "Film_Rell_3">
+		<button class = "navigate-button-1" 
+                        onclick = "window.location = '{{ url_for("index") }}'">
+			Logout
+		</button>
+                <p class = "text1">Your favourites list!</p>
+		<br/><br/>
+		<embed type = "text/html" src = "{{ url_for("static", filename = "temp_favourites.html") }}" width = "750" height = "225">
+                <br/><br/><br/><br/>
+		<form method = "POST" action = "/user_homepage/<user_id>">
+                        <input type = "radio" id = "movie_search" name = "action_type" value = "Search movies" checked>
+    			<label for = "movie_search">Search movies</label>
+                        <input type = "radio" id = "movie_recommendation" name = "action_type" value = "Get movie recommendation">
+                        <label for = "movie_recommendation">Get movie recommendation</label>
+                        <input type = "radio" id = "remove_favourites" name = "action_type" value = "Remove favourites">
+			<label for = "remove_favourites">Remove favourites</label>
+                        <br/><br/>
+			Favourites removal : <input type = "text" name = "favourites_removal" 
+				            placeholder = "Type indices of entries separated by comma (e.g., 5849, 9742) from the above table to remove movies from your favorites list" value = "" style = "width: 750px;"/>
+			<p>
+				<button class = "form-submit-button" type = "submit">Enter</button>
+			</p>
+		</form>
+		<pre><b>Message: {{message}}</b></pre>
+	</body>
+</html>

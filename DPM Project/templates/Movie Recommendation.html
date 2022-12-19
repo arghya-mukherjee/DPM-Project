@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<script type = "text/javascript">
+        		window.history.forward();
+        		function noBack() {
+            			window.history.forward();
+        		}
+    		</script>
+		<link rel = "stylesheet" href = "{{ url_for("static", filename = "style3.css") }}" />
+	</head>
+	<body style = "text-align:center;">
+                <img class = "filmReel1" src = "{{ url_for("static", filename = "1000_F_116184262_OXtEyENI2Cog9JaBh8HHElq4m59lRB2f.jpg") }}" 
+		     alt = "Film_Reel_1">
+                <img class = "filmReel2" src = "{{ url_for("static", filename = "1000_F_116184262_OXtEyENI2Cog9JaBh8HHElq4m59lRB2f.jpg") }}" 
+		     alt = "Film_Reel_2">
+                <img class = "filmReel3" src = "{{ url_for("static", filename = "giphy.webp") }}" alt = "Film_Rell_3">
+                <button class = "navigate-button-1" 
+                        onclick = "window.location = '{{ url_for("user_homepage", user_id = user_id) }}'">
+			Favourites Page
+		</button>
+                <button class = "navigate-button-2" 
+                        onclick = "window.location = '{{ url_for("index") }}'">
+			Logout
+		</button>
+		<p class = "text1">Your personalized movie-recommendation system!</p>
+		<form method = "POST" action = "/movie_recommendation/<user_id>">
+			<input type = "radio" id = "filter_by_latest" name = "filter_type" value = "latest" checked>
+    			<label for = "filter_by_latest">Show latest movies</label>
+                        <input type = "radio" id = "filter_by_relevance" name = "filter_type" value = "relevance">
+                        <label for = "filter_by_relevance">Show most relevant movies</label>
+			<p>
+				<button class = "form-submit-button"  type = "submit">Enter</button>
+			</p>
+		</form> 
+                <pre><b>Message: {{message}}</b></pre>
+		<embed type = "text/html" src = "{{ url_for("static", filename = "temp_recommendations.html") }}" width = "750" height = "300">
+	</body>
+</html>

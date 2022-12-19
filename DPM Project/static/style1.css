@@ -1,0 +1,54 @@
+.filmReel1 {
+	position: absolute;
+        top: 0px;
+	left: 0px;
+	z-index: -3;
+        height: 100%;
+        opacity: 0.1;
+}
+
+.filmReel2 {
+	position: absolute;
+	top: 125px;
+	left: 505px;
+	z-index: -2;
+        width: 350px; 
+}
+
+.filmReel3 {
+	position: absolute;
+	top: 125px;
+	left: 505px;
+	z-index: -1;
+        width: 50px;
+	animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.form-submit-button {
+	background: #154360;
+	color: #fff;
+        height: 30px;
+	width: 60px;
+        border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.form-submit-button:hover {
+	background: #154360;
+	color: #fff;
+        height: 30px;
+	width: 60px;
+	border: 1px solid #000;
+	border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px #000;
+}

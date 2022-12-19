@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<script type = "text/javascript">
+        		window.history.forward();
+        		function noBack() {
+            			window.history.forward();
+        		}
+    		</script>
+		<link rel = "stylesheet" href="{{ url_for("static", filename = "style1.css") }}" />
+	</head>
+	<body style = "text-align:center;"> 	
+		<br/><br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/>
+                <img class = "filmReel1" src = "{{ url_for("static", filename = "clipart3557545.png") }}" alt = "Film_Reel_1">
+                <img class = "filmReel2" src = "{{ url_for("static", filename = "920916.png") }}" alt = "Film_Rell_2">
+                <img class = "filmReel3" src = "{{ url_for("static", filename = "dniezby_Film_reel.svg") }}" alt = "Film_Rell_3">
+                <img class = "filmReel3" src = "{{ url_for("static", filename = "dniezby_Film_reel.svg") }}" alt = "Film_Rell_3">
+		<form method = "POST" action = "/">
+			<p>
+				User ID : <input type = "text" name = "user_id" 
+				           placeholder = "Enter your user ID" value = "" />
+                                <br/><br/>
+				Password : <input type = "password" name = "password" 
+					    placeholder = "Enter your password" value = "" />
+			</p>
+                        <input type = "radio" id = "new_user" name = "user_type" value = "New User">
+    			<label for = "new_user">New User</label>
+                        <input type = "radio" id = "existing_user" name = "user_type" value = "Existing User">
+                        <label for = "existing_user">Existing User</label>
+			<p>
+				<button class = "form-submit-button" type = "submit">Enter</button>
+			</p>
+		</form>
+		<pre><b>Message: {{message}}</b></pre>
+	</body>
+</html>

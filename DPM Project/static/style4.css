@@ -1,0 +1,9 @@
+.dataframe td, th {
+    width: 100px;
+}
+
+.dataframe tr:hover {
+    background: silver;
+    cursor: pointer;
+}
+
